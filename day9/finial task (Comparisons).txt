@@ -1,0 +1,65 @@
+1-the differences between batch, script, and transaction in SQL Server is vital for effective database management. 
+Batches are atomic units of work that consist of one or more SQL statements executed sequentially. 
+Scripts are collections of batches executed together as a logical unit,
+while transactions ensure the ACID properties and maintain data integrity. By grasping these distinctions,
+developers and database administrators can optimize their SQL Server operations and ensure the reliability of their databases.
+2-triggers are event-driven database objects that automatically execute in response to specific events on a table,
+while stored procedures are named collections of SQL statements that can be called and executed multiple times, 
+promoting code reusability and modularity in the application.  
+3-stored procedures are primarily used for encapsulating complex logic and performing actions, 
+while functions are focused on returning specific values or result sets. 
+Stored procedures can have various return types or no return type, 
+and they can contain transaction control statements. Functions must have a defined return type,
+cannot have transaction control statements, and are commonly used within queries or expressions. 
+4-the DROP statement removes entire database objects, 
+the TRUNCATE statement removes all rows from a table quickly, 
+and the DELETE statement selectively removes specific rows based on specified criteria. 
+DROP is irreversible, TRUNCATE is faster but removes all data, 
+and DELETE allows selective removal and provides options for recovery.
+5- the SELECT statement is used to retrieve data from existing tables,
+while the SELECT INTO statement creates a new table and populates it with the result set of a SELECT statement.
+The SELECT statement allows for data retrieval, filtering, and sorting,
+while the SELECT INTO statement is used for creating new tables based on the structure and data returned by a SELECT statement.  
+6-local variables have a limited scope and are accessible only within a specific block of code,
+while global variables have a broader scope and can be accessed from anywhere within the program or script. 
+Local variables exist only during the execution of the block of code where they are declared,
+while global variables persist throughout the entire execution of the program or script. 
+7-both CONVERT and CAST statements are used for data type conversion in SQL.
+CONVERT provides more flexibility in specifying the target data type and formatting options, 
+while CAST has a simpler syntax and is supported by many database systems as part of the SQL standard.        
+8-DDL is for defining and managing the structure of the database, 
+DML is for manipulating data, DCL is for controlling access and permissions,
+DQL is for querying data, and TCL is for managing transactions. 
+Each category plays a specific role in the overall management and utilization of a relational database. 
+9-SQL Server Authentication requires a specific SQL Server username and password managed by SQL Server,
+while Windows Authentication relies on Windows user accounts for authentication, 
+leveraging the underlying Windows security mechanisms.
+Windows Authentication is often considered more secure and is commonly used in enterprise environments.
+10-the main difference lies in how data is physically stored on disk. 
+A clustered index determines the physical order of the table, while a non-clustered index provides a separate,
+ordered structure to enhance query performance without affecting the physical order of the data.
+11-GROUP BY ROLLUP and GROUP BY CUBE are extensions to the standard SQL GROUP BY clause. 
+They are used to generate subtotals and grand totals in result sets, providing a convenient way to summarize data.
+12-inline functions return a table-like result and are often used for more complex logic,while views provide a
+virtual representation of a query's result and are commonly used for simplifying queries and encapsulating logic.
+13-while both functions provide a way to assign ranks to rows based on a specified order,
+ROW_NUMBER() assigns unique integers without consideration for ties, 
+while DENSE_RANK() handles ties by assigning the same rank to tied rows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              

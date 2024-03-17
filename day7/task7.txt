@@ -1,0 +1,31 @@
+0normal
+Department(dept_id,dept_name,location,mgr_name,mgr_id_no,tel_exten)
+customer(custno,custname,dateofcompliant,natureofcomplaint)
+1normal
+Department(dept_id (pk),dept_name,location,mgr_name,mgr_id_no,tel_exten)
+customer([custno(fk),dept_no (fk)]pk,custname,dateofcompliant,natureofcomplaint)
+2normal
+Department(dept_id (pk),dept_name,location,mgr_name,mgr_id_no,tel_exten)
+cust_compamint([dept_id(fk),custno(fk)]pk,dateofcompliant,natureofcomplaint)
+customerno_name(custno(pk),custname)
+3normal
+customerno_name(custno(pk),custname)
+Department(dept_id (pk),dept_name,location,mgr_name,mgr_id_no,tel_exten,mgr_id(fk))
+Dep_manager(mgr_id(pk),mgr_name)
+cust_complamint([dept_id(fk),custno(fk)]pk,dateofcompliant,natureofcomplaint)
+_________________________________________________________________________________________
+ 0normal
+employee(empono (pk),emponame,deptid,deptmanager)
+project(projid(pk),proj_startdate,location,weeksonproject)
+ 1normal
+employee(empono,emponame,dept,deptmanager)
+project([projid(fk),empono(fk)]pk,weeksonproject,location,startdate)
+2normal
+employee(empono (pk),emponame,deptid,deptmanager)
+project([projid(fk),empono(fk)]pk,weeksonproject)
+project_info(projid(pk),location,startdate)
+3normal
+employee(empono (pk),emponame,deptid(fk))
+manager(deptid(pk),deptmanager)
+project_employee([projid(fk),empono(fk)]pk,weeksonproject)
+project_info(projid(pk),location,startdate)

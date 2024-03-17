@@ -1,0 +1,70 @@
+                      1
+select count(st_id) as "number of student" from Student 
+where St_Age is not null
+
+                      2
+select distinct Ins_Name from Instructor
+
+
+                      3
+select s.st_id ,isnull(s.st_fname,'Not Assigned') +' '+
+ISNULL(s.st_lname ,'Not Assigned') "full names",
+isnull (d.dept_name,0) "department_name"
+from Student s ,Department d
+where s.Dept_Id=d.Dept_Id
+
+                      4
+select i.ins_name , d.dept_name from Department d 
+right join Instructor i
+on d.Dept_Id=i.Dept_Id
+
+                       5
+select s.st_fname+' '+s.st_lname "studentsfull names",c.crs_name
+from Student s,Course c,Stud_Course w
+where s.St_Id=w.St_Id and w.Crs_Id=c.Crs_Id and w.Grade is not null
+
+                       6
+select t.top_name, COUNT(c.crs_id) "courses_num"
+from Topic t , Course c
+where t.top_id=c.top_id group by t.top_name
+
+                       7
+select max(salary)"max_salary",
+min(salary)"min_salary"
+from Instructor 
+
+                          8
+select * from Instructor where Salary<
+(select avg(Salary) from Instructor)
+
+                          9
+select d.dept_name "department_name" from 
+Department d,Instructor i
+where i.Dept_Id=d.Dept_Id and i.salary=(select min(salary) from Instructor)
+
+                           10
+select top(2) ins_name,salary from Instructor
+order by Salary desc
+
+                           11
+select ins_name,coalesce(convert(varchar(50),salary),'bouns') "ins_salary"
+from Instructor
+
+                           12
+select avg(salary)"ins_avgsalary" from Instructor
+
+                           13
+select s.st_fname , sw.* from Student s ,Student sw
+where s.St_Id=sw.St_super
+
+                           14
+select * from (select * ,ROW_NUMBER() over 
+(partition by dept_id order by salary desc)t
+from Instructor) s
+where t <=2
+
+                            15
+select * from (select * ,ROW_NUMBER() over 
+(partition by dept_id order by newid())t
+from Student) s
+where t =1

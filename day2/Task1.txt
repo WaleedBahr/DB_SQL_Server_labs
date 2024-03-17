@@ -1,0 +1,34 @@
+1-Musician(MusicianID [PK], Name, Address, PhoneNumber)
+2-Album(AlbumID [PK], Title, CopyrightDate, MusicianID [FK])
+3-Song{SongTitle [PK],Author,IdAlbum(fk)}
+4-Instrument(InstrumentName[PK],MusicalKey)
+5-Mus_Instr(MusicianID [FK], InstrumentName [FK])PK
+6-Mus_Song(MusicianID [FK], SongTitle [FK])pk
+total number of tales = (4+2+0)-0=6
+_________________________________________________________________
+1-SalesOffice (Office_Number [PK], Location,Employee_ID [FK])
+2-Employee (Employee_ID [PK], Employee_Name,Office_Number [FK])
+3-Property (Property_ID [PK], LocAdd,LocCity,LocState,LocZip,Office_Number [FK])
+4-Owner (Owner_ID [PK], Owner_Name)
+5-Prop_Owner({Property_ID [FK],Owner_ID [FK]}PK,Percent-owned)
+total number of tales = (4+1+0)-0=5
+__________________________________________________________________
+1-Ward(ward_id (PK), Name, Nurse_ID[FK])
+2-Patient(Patient_id (PK), Name, Date_Of_Birth,Consultant_id (FK),ward_id (fK))
+3-Consultant(Consultant_id (PK), Name)
+4-Nurse(Nurse_ID (PK), Name, Number,ward_id (FK))
+5-Drug(Drug_Code (PK), Recommended_Dosage, Brand_Name)
+6-Brand-Multi{(Drug_Code (FK),Brand_Name)}Fk
+7-Patient_Consultant{(Patient_id (FK),Consultant_id (FK))}PK
+8-Pat_Dru_Nurse({Patient_id (FK),Drug_Code (FK),Nurse_ID (FK)}PK,Date,Time,Dosage)
+total number of tales =(5+2+1)-0=8
+_________________________________________________________________________________________
+1-Airline(Airline_ID (PK),Name, Address, Contact_Person, phones)
+2-phones_multi(Airline_ID (FK),phones)pk
+3-Employee(Employee_ID (PK), Name, Address, Day, Month ,Year, Gender, Position, Qualifications,Airline_ID (FK) )
+4-Qualif_multi(Employee_ID (FK),Qualifications)PK
+5-Route(Route_ID (PK), Origin, Destination, Distance, Classification)
+6-Transaction(Transaction_ID (PK), Date, Description, Amount,Airline_ID (FK))
+7-Aircraft_Route({Aircraft_ID (FK),Route_ID (FK)}PK,Price/pass,passe,Dept DateTime,ArrDateTime)
+8-Aircraft_Crew(Aircraft_ID (PK), Capacity, Model,Airline_ID (FK),Crew_ID,Maj. Pilot,Ass. Pilot,Hostess1,Hostess2)
+total number of tales =(6+1+2)-1=8

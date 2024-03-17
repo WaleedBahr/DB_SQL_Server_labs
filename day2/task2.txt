@@ -1,0 +1,11 @@
+select * from Employee
+select * from Project
+select * from Departments
+select fname,lname,salary,dno from Employee
+select pname,plocation,dnum from Project
+select fname + ' ' + lname as "full name", salary * 0.1 as "ANNUAL COMM " from Employee
+select fname + ' ' + lname as "full name",ssn from Employee where salary >1000
+select fname + ' ' + lname as "full name",ssn from Employee where salary * 12 >10000
+select fname + ' ' + lname as "full name",salary from Employee where sex='F'
+select dnum,dname from Departments where mgrssn=968574
+select pnumber,pname,plocation from Project where dnum=10
